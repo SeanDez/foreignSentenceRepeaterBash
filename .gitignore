@@ -2,3 +2,4 @@
 # google cloud service account credentials
 credentials.json
 
+node_modules/
