@@ -1,0 +1,3 @@
+[submodule "tests/batsMock"]
+	path = tests/batsMock
+	url = https://github.com/jasonkarns/bats-mock
