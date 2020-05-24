@@ -29,18 +29,6 @@ function setup() {
 }
 
 
-@test 'createParentFolder' {
-   # setup
-   # create a local folder "createdForTest"
-   createParentFolder "createdForTest"
-   
-   # assert
-   assert_file_exist ./createdForTest
-
-   # teardown
-   rmdir ./createdForTest
-
-}
 
 
 @test "toLowercase" {

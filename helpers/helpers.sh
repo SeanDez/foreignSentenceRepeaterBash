@@ -1,18 +1,31 @@
 
 
-
-function createParentFolder { 
-   # string. can be absolute or relative path
-   folderPath=$1
-
-   # if folder does not exist, create it
-   if [[ ! -d $folderPath ]]
-   then
-      mkdir $folderPath
-      chmod 644 createdForTest # read write
-   fi
-
+function displayUsageInstructions {
+   echo "**********************************************"
+   echo "Foreign Sentence Repeater - Usage Instructions"
+   echo "**********************************************"
+   echo
+   echo "Sign up for a Google Cloud account"
+   echo
+   echo "Create a new \"Service Account Role\" by following the instructions on this page: "
+   echo
+   echo "Enable the Translations API here: "
+   echo
+   echo "Enable the Text-to-Speech API here: "
+   echo
+   echo "Run the setup wizard with -c or --configure ( ./runScript.sh -c )"
+   echo
+   echo "Create a sentences.txt file with one sentence per line"
+   echo
+   echo "run the script with the -b or --build flag ( ./runScript.sh -b )"
+   echo
+   echo "Your sentences and phrases will now be available in the ./audioTranslations folder"
+   echo
+   echo "(Optional) Add additional sentences by modifying your sentences.txt file, or using the -s or --sentence flag with a single string argument for a new sentence to translate, build, and add to the ./audioTranslations folder ( ./runScript.sh -s \"Sentence to be translated here.\" )."
 }
+
+
+
 
 function createConfigFolderAndFile {
    echo
@@ -49,12 +62,8 @@ function toLowercase {
 
 
 function run_wizard {
-   isNew=askIfNewProject
+   echo
 
-   if [[ $isNew -eq "y" || isNew -eq "yes" ]]
-   then
-      echo
-   fi
 }
 
 

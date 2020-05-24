@@ -32,13 +32,28 @@ echo "Using credentials file at ${GOOGLE_APPLICATION_CREDENTIALS}"
 
 
 # case statement to control all options
-
-# if no arguments, run the wizard
-# todo if  one argument -- ?
-if [[ $# -eq 0 ]]
-then
-   run_wizard
-fi
+while [[ $# -gt 0 ]]
+do
+   case $1 in 
+      -i|--instructions)
+         # todo
+         displayUsageInstructions
+         break
+         ;;
+      -c|--configure)
+         run_wizard $1 # explain everything, gather
+         ;;
+      -b|--build)
+         ;;
+      -s|--sentence)
+         ;;
+      *)
+         # todo
+         displayUsageInstructions
+      ;;
+   esac
+   # shift # breaking is the proper action
+done
 
 
 
