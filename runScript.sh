@@ -32,20 +32,15 @@ echo "Using credentials file at ${GOOGLE_APPLICATION_CREDENTIALS}"
 
 
 # case statement to control all options
-while [[ $# -gt 0 ]];
-do 
-   case $1 in 
-      -c|--config)
-         # setConfigurations $1
-         shift
-         ;;
-      *)
-         # default case. Expects a sentence string
-         buildAudios $1 
-         shift
-         ;;
-   esac
-done
+
+# if no arguments, run the wizard
+# todo if  one argument -- ?
+if [[ $# -eq 0 ]]
+then
+   run_wizard
+fi
+
+
 
 echo ${configData[languageCode]}
 echo ${configData[outputParentFolder]}

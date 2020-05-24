@@ -37,6 +37,28 @@ function setConfigurations {
 }
 
 
+function toLowercase {
+   
+   # simulated return value
+   # lowercases only the first field (by space delimiter)
+   # $0 would have lowercased all fields
+   # here string puts the variable into stdin so awk can read it
+   # awk can't take arguments. It can take files or response streams
+   awk '{print tolower($1)}' <<< $1
+}
+
+
+function run_wizard {
+   isNew=askIfNewProject
+
+   if [[ $isNew -eq "y" || isNew -eq "yes" ]]
+   then
+      echo
+   fi
+}
+
+
+
 function buildSentenceFolder {
    local $sentenceString = $1
 

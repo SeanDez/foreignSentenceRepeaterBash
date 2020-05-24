@@ -14,6 +14,7 @@ source ./helpers/helpers.sh
 
 function setup() {
    echo
+   echo
 }
 
 @test "a/b matcher to ensure the asserts are working" {
@@ -41,6 +42,17 @@ function setup() {
 
 }
 
+
+@test "toLowercase" {
+   # setup
+
+   # operate, assert
+   local result=$(toLowercase "TestWord Second")
+   # actual, then expected
+   assert_equal $result "testword" 
+
+   # teardown
+}
 
 
 # test an output
